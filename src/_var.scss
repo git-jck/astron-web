@@ -1,0 +1,58 @@
+$primary-blue-light: #a0d3ff;
+$primary-blue: #3ba4ff;
+$primary-blue-dark: #0067c2;
+$primary-blue-black: #003563;
+$primary-yellow: #ffa200;
+$primary-yellow-light: #ffd997;
+$secondary-color: #4d4d4d;
+$bg-grey: #e4e4e4;
+$bg-part-grey: #f5f5f5;
+$font-grey: #707070;
+$link-grey: #a3a3a3;
+$link-red: tomato;
+
+$primary-container: 85%;
+$tablet-container: 90%;
+$mobile-container: 93%;
+
+$font-family-primary: "Roboto", sans-serif;
+$font-base-size: 16px;
+$font-size-l1: 18px;
+$font-size-l2: 22px;
+$font-size-l3: 28px;
+$font-size-l4: 40px;
+$font-w500: 500;
+$font-w600: 600;
+$font-w800: 800;
+
+@mixin dividerGap($gapHeight: 60px) {
+    width: 100%;
+    height: $gapHeight;
+}
+
+.gd{
+    height: 60px;
+    width: 100%;
+    // background-color: #ffa200;
+    background-color: transparent;
+}
+
+.default-container-height {
+    min-height: calc(100vh - 476px);
+}
+.default-container {
+    max-width: 1440px;
+    width: $primary-container;
+    margin: 0 auto;
+    // overflow: hidden;
+
+    @media only screen and (max-width: 992px) {
+        width: $primary-container;
+    }
+    @media only screen and (max-width: 768px) {
+        width: $tablet-container;
+    }
+    @media only screen and (max-width: 550px) {
+        width: $mobile-container;
+    }
+}

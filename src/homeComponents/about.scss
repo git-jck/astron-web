@@ -1,0 +1,64 @@
+@use '../var';
+
+.aboutWrapper{
+    width: 100%;
+    // margin-top: 40px;
+    .about-container {
+        width: var.$primary-container;
+        margin: 0 auto;
+        color: var.$font-grey;
+        // height: 500px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        
+        @media only screen and (max-width: 630px) {
+            grid-template-columns: 1fr;
+        }
+        
+        .about-img{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            // aspect-ratio: 3 / 2;
+            width: 100%;
+            min-height: 400px;
+            background-color: aqua;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: right;
+            }
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            p{
+                &:nth-child(1) {
+                    font-size: 20px;
+                    color: var.$primary-blue;
+                    font-weight: var.$font-w600;
+                }
+                &:nth-child(2) {
+                    // font-size: var.$font-base-size;
+                    color: var.$font-grey;
+                    margin-top: 0;
+                }
+            }
+
+            a {
+                display: block;
+                color: var.$primary-yellow;
+                cursor: pointer;
+                text-decoration: none;
+                margin: auto 0 0 0;
+            }
+        }
+    }
+}
+
+.gapdiv {
+    @include var.dividerGap
+}

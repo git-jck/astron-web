@@ -1,0 +1,102 @@
+@use "../var";
+
+.titleWrapper {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-top: 60px;
+
+    @media only screen and (max-width: 550px) {
+        justify-content: center;
+    }
+
+    .strip {
+        background-color: var.$primary-blue;
+        flex: 0 0 50%;
+        display: flex;
+        align-items: stretch;
+
+        @media only screen and (max-width: 550px) {
+            display: contents;
+            flex: 0 0 20px;
+            color: var.$primary-blue;
+        }
+
+        .title-strip {
+            display: flex;
+            align-items: stretch;
+            transform: translate(-50%);
+            @media only screen and (max-width: 550px) {
+                transform: translate(0%);
+            }
+
+            .headTail {
+                width: 20px;
+                background-color: var.$primary-blue;
+            }
+
+            .title {
+                min-width: max-content;
+                display: flex;
+                align-items: center;
+                // height: 100%;
+                // background-color: transparent;
+                background-color: #fff;
+                padding: 0 40px;
+                font-size: 26px;
+                font-weight: 800;
+
+                @media only screen and (max-width: 550px) {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+    .strip-yellow {
+        background-color: var.$primary-yellow;
+        flex: 0 1 50%;
+        display: flex;
+        align-items: stretch;
+
+        @media only screen and (max-width: 550px) {
+            display: contents;
+            flex: 0 0 20px;
+            color: var.$primary-yellow;
+        }
+
+        .title-strip {
+            display: flex;
+            align-items: stretch;
+            transform: translate(-50%);
+            @media only screen and (max-width: 550px) {
+                transform: translate(0%);
+            }
+
+            .headTail {
+                width: 20px;
+                background-color: var.$primary-yellow;
+            }
+
+            .title {
+                min-width: max-content;
+                display: flex;
+                align-items: center;
+                // height: 100%;
+                // background-color: transparent;
+                background-color: #fff;
+                padding: 0 40px;
+                font-size: 26px;
+                font-weight: 800;
+
+                @media only screen and (max-width: 550px) {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

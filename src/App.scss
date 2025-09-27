@@ -1,0 +1,64 @@
+@use "./var";
+
+@use "./layout.scss";
+@use "./header.scss";
+@use "./homeComponents/homeTitle.scss";
+@use "./homeComponents/slider.scss";
+@use "./homeComponents/about.scss";
+@use "./homeComponents/power.scss";
+@use "./homeComponents/gallery.scss";
+@use "./homeComponents/why.scss";
+@use "./homeComponents/tesimonial.scss";
+@use "./homeComponents/tesimonialV.scss";
+@use "./homeComponents/stats.scss";
+
+@use "./componentsPage/pnf.scss";
+@use "./componentsPage/footer.scss";
+@use "./componentsPage/aboutus.scss";
+@use "./componentsPage/contactus.scss";
+@use "./componentsPage/franchise.scss";
+@use "./miniComponent/contactform.scss";
+@use "./miniComponent/timeLoader.scss";
+@use "./componentsPage/noInternet.scss";
+@use "./componentsPage/courses.scss";
+@use "./componentsPage/coursesCard.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: var.$font-family-primary;
+
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 2200px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.astron-hr {
+  width: 100%;
+  height: 3px;
+  border-top: 2px dashed var.$secondary-color;
+}
+
+.astronAppWrapper-notOnline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  // opacity: 0.5;
+  z-index: 99999;
+  cursor: not-allowed;
+  // pointer-events: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

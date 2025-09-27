@@ -1,0 +1,179 @@
+@use "var";
+
+.headerWrapper {
+    height: 65px;
+    width: 100%;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+    box-shadow: 0 6px 24px 6px rgba(116, 116, 116, 0.05);
+    transition: box-shadow 1s;
+    // transition: height 0.5s;
+    // cursor: not-allowed;
+    // pointer-events: none;
+
+    &.sticky-header {
+        // height: 60px;
+        box-shadow: 0 6px 24px 6px rgba(116, 116, 116, 0.2);
+    }
+
+    .header-container {
+        position: relative;
+        height: 100%;
+        background-color: #fff;
+        // border-bottom: 1px solid red;
+        margin: 0 auto;
+        color: darkslategray;
+
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        //   justify-content: space-between;
+
+        .logoBlock {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+
+            img {
+                height: 75%;
+                @media only screen and (max-width: 992px) {
+                    height: 65%;
+                }
+                @media only screen and (max-width: 860px) {
+                    height: 51%;
+                }
+                @media only screen and (max-width: 768px) {
+                    height: 69%;
+                }
+                @media only screen and (max-width: 480px) {
+                    height: 60%;
+                }
+                @media only screen and (max-width: 380px) {
+                    height: 69%;
+                }
+            }
+        }
+
+        .headerLinks {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: auto;
+
+            @media only screen and (max-width: 992px) {
+                gap: 12px;
+            }
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+            a {
+                color: var.$link-grey;
+                font-size: var.$font-base-size;
+                font-weight: var.$font-w500;
+                text-decoration: none;
+
+                @media only screen and (max-width: 992px) {
+                    font-size: 14px;
+                }
+
+                &.active {
+                    color: var.$primary-blue;
+                }
+            }
+        }
+        .ham-menu {
+            display: none;
+            margin-left: auto;
+            cursor: pointer;
+
+            @media only screen and (max-width: 768px) {
+                display: grid;
+                place-content: center;
+            }
+
+            &.active {
+                .bars {
+                    .top {
+                        stroke-dashoffset: -132px;
+                    }
+                    .middle {
+                        stroke-dashoffset: -71px;
+                    }
+                    .bottom {
+                        stroke-dashoffset: -132px;
+                    }
+                }
+            }
+
+            .bars {
+                width: 65px;
+                .line {
+                    fill: none;
+                    stroke: var.$primary-blue;
+                    stroke-width: 4;
+                    stroke-linecap: square;
+                    transition:
+                        stroke-dasharray 400ms,
+                        stroke-dashoffset 400ms;
+                }
+
+                .top {
+                    stroke-dasharray: 40 172;
+                }
+
+                .line.middle {
+                    stroke-dasharray: 40 111;
+                }
+
+                .line.bottom {
+                    stroke-dasharray: 40 172;
+                }
+            }
+        }
+    }
+    .ham-list {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: max-content;
+        max-height: 50vh;
+        top: 65px;
+        border-bottom: 5px solid var.$primary-yellow;
+
+        @media only screen and (max-width: 768px) {
+            display: block;
+        }
+
+        .ham-links {
+            width: 100%;
+            background-color: #fff;
+            padding: 24px 50px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 15px;
+
+            a {
+                font-size: var.$font-size-l1;
+                color: var.$link-grey;
+
+                // font-size: var.$font-base-size;
+                font-weight: var.$font-w500;
+                text-decoration: none;
+
+                @media only screen and (max-width: 992px) {
+                    // font-size: 14px;
+                }
+
+                &.active {
+                    color: var.$primary-blue;
+                }
+            }
+        }
+    }
+}

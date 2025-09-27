@@ -1,0 +1,80 @@
+@use "../var";
+
+.course-card {
+    width: 100%;
+    min-height: 450px;
+    background-color: var.$bg-part-grey;
+    // border-radius: 12px;
+    padding: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 18px;
+
+    .course-img-block {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        // border-radius: 8px;
+        background-color: aquamarine;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h3 {
+        margin: 0;
+    }
+    .course-whom {
+        font-weight: 500;
+        color: var.$font-grey;
+        margin: 0;
+    }
+    .course-detail {
+        color: var.$font-grey;
+        margin: 0;
+    }
+
+    .btn-block {
+        display: flex;
+        flex-direction: row nowrap;
+        align-items: center;
+        gap: 12px;
+
+        margin-top: auto;
+
+        a {
+            flex: 1 0 auto;
+            padding: 12px 12px;
+            background-color: var.$primary-blue-light;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-size: var.$font-size-l1;
+            font-weight: var.$font-w600;
+
+            &:hover {
+                outline: 2px dashed #fff;
+                outline-offset: -5px;
+            }
+
+            img {
+                width: 18px;
+                height: auto;
+            }
+        }
+
+        div {
+            flex: 0 0 auto;
+            height: 1px;
+            background-color: var.$primary-blue-light;
+        }
+    }
+}

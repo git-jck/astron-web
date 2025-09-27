@@ -1,0 +1,40 @@
+@use "../var";
+
+.noInternetWrapper {
+    width: 35%;
+    max-width: 650px;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+        height: 80%;
+        min-width: 280px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        font-size: var.$font-size-l3;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    button {
+        width: 180px;
+        text-align: center;
+        display: inline-block;
+        font-size: var.$font-base-size;
+        padding: 12px 20px;
+        background-color: var.$primary-yellow;
+        color: var.$bg-part-grey;
+        font-weight: var.$font-w600;
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:hover {
+            outline-offset: -5px;
+            outline: 1px dashed var.$bg-part-grey;
+        }
+    }
+}

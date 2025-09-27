@@ -1,0 +1,170 @@
+@use "../var";
+
+.aboutusWrapper {
+    p {
+        color: var.$font-grey;
+        display: flex;
+        align-items: stretch;
+        // justify-content: space-between;
+        gap: 20px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            flex: 0 0 5px;
+            // height: 40px;
+            background-color: var.$bg-part-grey;
+            // margin-right: 20px;
+        }
+
+        // @media only screen and (max-width: 480px) {
+        //     font-size: 14px !important;
+        // }
+    }
+    .aboutus-container {
+        .about-astron {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+
+            font-size: 18px;
+            letter-spacing: 0.5px;
+
+            .about-astron-image {
+                flex: 0 0 25%;
+                img {
+                    width: 100%;
+                }
+            }
+            .about-astron-content {
+                flex: 1 0 50%;
+
+                h5 {
+                    font-size: var.$font-size-l3;
+                    color: var.$primary-blue;
+                    font-weight: var.$font-w600;
+                    margin: 0;
+                }
+            }
+            @media only screen and (max-width: 768px) {
+                flex-flow: column nowrap;
+                .about-astron-image {
+                    flex: 0 0 100%;
+                    img {
+                        width: 110px;
+                    }
+                }
+                .about-astron-content {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+        .about-vedic {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+
+            font-size: 18px;
+            letter-spacing: 0.5px;
+
+            .about-vedic-image {
+                flex: 0 0 25%;
+                order: 2;
+                img {
+                    width: 100%;
+                }
+            }
+            .about-vedic-content {
+                flex: 1 0 50%;
+                order: 1;
+
+                h5 {
+                    font-size: var.$font-size-l3;
+                    color: var.$primary-yellow;
+                    font-weight: var.$font-w600;
+                    margin: 0;
+                }
+            }
+            @media only screen and (max-width: 768px) {
+                flex-flow: column nowrap;
+                .about-vedic-image {
+                    flex: 0 0 100%;
+                    order: 1;
+                    img {
+                        width: 110px;
+                    }
+                }
+                .about-vedic-content {
+                    flex: 0 0 100%;
+                    order: 2;
+                }
+            }
+        }
+
+        .about-vedicbenifits-content {
+            font-size: 18px;
+            letter-spacing: 0.5px;
+
+            h5 {
+                font-size: var.$font-size-l3;
+                color: var.$primary-yellow;
+                font-weight: var.$font-w600;
+                margin: 0;
+            }
+        }
+
+        .vedic-abacus {
+            width: 100%;
+
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            h5.title {
+                text-align: center;
+                font-size: var.$font-size-l3;
+                color: var.$primary-blue;
+            }
+            .table-grid {
+                width: 100%;
+                // background-color: aqua;
+                overflow: auto;
+                // margin: 0 auto;
+
+                .diff-header,
+                .diff-content {
+                    min-width: min-content;
+                    max-width: 100%;
+                    padding: 0 20px;
+                    display: grid;
+                    grid-template-columns: minmax(210px, 1fr) minmax(210px, 1fr);
+                    gap: 15px;
+                    border-bottom: 1px dashed var.$bg-grey;
+                    // background-color: blueviolet;
+
+                    p {
+                        padding-right: 10px;
+                        // &:nth-child(1) {
+                        //     border-right: 1px dashed var.$secondary-color;
+                        // }
+                    }
+                }
+
+                .diff-header {
+                    text-align: center;
+                    background-color: var.$bg-part-grey;
+                    color: var.$primary-yellow;
+                    font-size: var.$font-size-l2;
+                    padding: 16px 0;
+
+                    h5 {
+                        margin: 0;
+                    }
+                }
+                // .diff-content {
+                // }
+            }
+        }
+    }
+}

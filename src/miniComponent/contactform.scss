@@ -1,0 +1,197 @@
+@use "../var";
+
+.formWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+
+    .form-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 10px;
+
+        h5 {
+            margin: 0 0 20px 0;
+            font-size: var.$font-size-l2;
+            font-weight: var.$font-w500;
+            color: var.$primary-yellow;
+        }
+        a {
+            width: max-content;
+            color: var.$link-red;
+            p{
+                margin: 5px 0 0 0;
+                font-size: var.$font-size-l1;
+                font-weight: 600;
+            }
+        }
+    }
+    .input-block {
+        .input-container {
+            // background-color: blueviolet;
+            position: relative;
+            // margin-bottom: 15px;
+
+            .input-field {
+                border: 1px solid #ccc;
+                font-size: 16px;
+                padding: 10px;
+                width: 100%;
+                outline: none;
+                color: var.$font-grey;
+                resize: none;
+            }
+
+            .floating-label {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                transition: all 0.2s ease-in-out;
+                pointer-events: none;
+                background-color: white;
+                padding: 0 5px;
+                color: var.$font-grey;
+
+                &.focused {
+                    top: -8px;
+                    font-size: 12px;
+                    color: #007bff;
+                }
+            }
+        }
+        p {
+            visibility: hidden;
+            margin: 5px 0 0 0;
+            font-size: 11px;
+            color: var.$font-grey;
+
+            &.warn {
+                visibility: visible;
+                color: rgb(255, 106, 106);
+            }
+        }
+    }
+
+    button {
+        width: 180px;
+        // text-align: center;
+        display: inline-block;
+        font-size: var.$font-base-size;
+        padding: 8px 16px;
+        background-color: var.$primary-yellow;
+        color: var.$bg-part-grey;
+        font-weight: var.$font-w600;
+        border: none;
+        cursor: pointer;
+
+        @media only screen and (max-width: 480px) {
+            width: 100%;
+        }
+
+        &:hover {
+            outline-offset: -5px;
+            outline: 1px dashed var.$bg-part-grey;
+        }
+        &:focus {
+            outline-offset: -5px;
+            outline: 1px dashed var.$bg-part-grey;
+        }
+    }
+}
+
+// .dropdown {
+// position: relative;
+.input-drop-container {
+    margin-bottom: 5px;
+    position: relative;
+    // display: inline-block;
+
+    .dropdown-button {
+        border: 1px solid #ccc;
+        font-size: 16px;
+        min-height: 41px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        cursor: pointer;
+        background-color: #fff;
+        text-align: left;
+        color: var.$font-grey;
+        font-weight: 400;
+
+        // padding: 16px;
+        // border: none;
+    }
+
+    svg {
+        position: absolute;
+        width: 21px;
+        top: 10px;
+        right: 5px;
+        transform: translate(-50%);
+        fill: var.$font-grey;
+
+        &.rotate {
+            transform: translate(-50%) rotate(-180deg);
+        }
+    }
+
+    .floating-label {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        transition: all 0.2s ease-in-out;
+        pointer-events: none;
+        background-color: white;
+        padding: 0 5px;
+        color: var.$font-grey;
+
+        &.floating-label.focused {
+            top: -8px;
+            font-size: 12px;
+            color: #007bff;
+        }
+    }
+
+    .dropdown-list {
+        width: 100%;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 20px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, #ffffff 94%, #0000) top/8px 8px no-repeat,
+        conic-gradient(#0000 30%, #ffffff);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+    animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+    100% {
+        transform: rotate(1turn);
+    }
+}

@@ -1,0 +1,14 @@
+@use '../var';
+
+.pnfWrapper {
+    width: 100%;
+
+    .pnf-container {
+        width: var.$primary-container;
+        margin: 0 auto;
+        min-height: calc(100vh - 466px);
+
+        display: grid;
+        place-content: center;
+    }
+}
